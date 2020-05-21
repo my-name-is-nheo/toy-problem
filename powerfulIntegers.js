@@ -25,7 +25,20 @@ Explanation:
 10 = 2^0 + 3^2
 
 basically find all the combinations where x^ i + y^j is less than or equal to bound
-
+create a variable equal to an array containing 2, x,x+1, y
 
 */
+
+  var finalArray = [];
+  for (var i = 0; i < 20 && Math.pow(x, i) <= bound; i++) {
+    for (var j = 0; j < 20 && Math.pow(y, j) <= bound; j++) {
+      var sum = Math.pow(x, i) + Math.pow(y, j);
+      if (sum <= bound) {
+        finalArray.push(sum);
+      }
+    }
+  }
+  return finalArray.sort((a, b) => {
+    return a - b;
+  });
 };
