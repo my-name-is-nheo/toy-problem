@@ -20,6 +20,17 @@ Input: arr = [3,1,7,11]
 Output: false
 Explanation: In this case does not exist N and M, such that N = 2 * M.
 
-
+// first iterate over the array and see if current element equal to 2 x other elements
    */
+
+  for (var i = 0; i < arr.length; i++) {
+    var iElement = arr[i];
+    for (var j = 0; j < arr.length; j++) {
+      var jElement = arr[j];
+      if ((jElement = 2 * iElement)) {
+        return true;
+      }
+    }
+  }
+  return false;
 };
