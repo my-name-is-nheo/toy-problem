@@ -6,4 +6,16 @@ Note:
 The number of elements initialized in nums1 and nums2 are m and n respectively.
 You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold additional elements from nums2.
 */
-var merge = function (nums1, m, nums2, n) {};
+var merge = function (nums1, m, nums2, n) {
+  /*
+I - two arrays with two limits
+O - array with two arrays concatted also sorted
+C - the number of elements initialized in nums1, and nums2 are m and n respectively
+  - num1 has enough space (size that is greater or equal to m + n ) to hold additional elements from nums 2
+E
+nums1 = [1,2,3,0,0,0], m = 3
+nums2 = [2,5,6],       n = 3
+
+Output: [1,2,2,3,5,6]
+ */
+};
