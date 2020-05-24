@@ -18,4 +18,11 @@ nums2 = [2,5,6],       n = 3
 
 Output: [1,2,2,3,5,6]
  */
+
+  return nums1
+    .slice(0, m)
+    .concat(nums2.slice(0, n))
+    .sort((a, b) => {
+      return a - b;
+    });
 };
