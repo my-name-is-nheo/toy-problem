@@ -31,4 +31,20 @@ var isValid = function (s) {
 
 
    */
+
+  var validObject = { "(": ")", "[": "]", "{": "}" };
+
+  // first do the restrictions
+  if (!s.length) return true;
+  if (s.length === 1) return false;
+  if (s.length % 2 !== 0) return false;
+  var newArray = s.split("");
+  var valid = false;
+  var vArray = [];
+  for (var index = 0; index < newArray.length; index++) {
+    var currentCharacter = newArray[index];
+    if (validObject[currentCharacter]) {
+      vArray.push(validObject[currentCharacter]);
+    }
+  }
 };
