@@ -9,4 +9,13 @@ E ;
 [2,2,3,1,3,3,0] =0
 
 */
+
+  let num = 0;
+  for (let n of nums) {
+    num ^= n;
+  }
+  return num;
 };
+var nums = [2, 2, 1];
+singleNumber(nums);
+//looked up bitwise operators
