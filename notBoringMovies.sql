@@ -22,3 +22,4 @@ For the example above, the output should be:
 |   1     | War       |   great 3D   |   8.9     |
 +---------+-----------+--------------+-----------+
  
+ SELECT * FROM CINEMA WHERE id %2 = 1 AND description != "boring" ORDER BY rating DESC
