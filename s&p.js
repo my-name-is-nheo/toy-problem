@@ -14,4 +14,18 @@ Product of digits = 2 * 3 * 4 = 24
 Sum of digits = 2 + 3 + 4 = 9
 Result = 24 - 9 = 15
   */
+  if (n > 0 && (n < 10) ^ 5) {
+    var newArray = n.toString(10).replace(/\D/g, "0").split("").map(Number);
+
+    var product = 1;
+    var sum = 0;
+
+    for (var index = 0; index < newArray.length; index++) {
+      product *= newArray[index];
+      sum += newArray[index];
+    }
+    console.log(product - sum);
+    return product - sum;
+  }
 };
+subtractProductAndSum(234);
