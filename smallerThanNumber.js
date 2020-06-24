@@ -36,3 +36,5 @@ Output: [0,0,0,0]
 };
 
 smallerNumbersThanCurrent([7, 7, 7, 7]);
+smallerNumbersThanCurrent([6, 5, 4, 8]);
+smallerNumbersThanCurrent([8, 1, 2, 2, 3]);
