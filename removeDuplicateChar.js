@@ -1,0 +1,1 @@
+function removeDuplicateChar(str) {}
