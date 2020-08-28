@@ -28,3 +28,26 @@ Constraints:
 1 <= nums.length <= 100
 1 <= nums[i] <= 100
 */
+var numIdenticalPairs = (nums) => {
+  var count = 0;
+  var identical;
+  var identicalCount = 0;
+  for (var i = 0; i < nums.length; i++) {
+    for (var j = 1; j < nums.length; j++) {
+      if (nums[i] == nums[j] && i < j) {
+        count++;
+      }
+
+      if (nums[i] == nums[j] && !(i < j)) {
+        identical = true;
+        identicalCount++;
+      }
+    }
+  }
+  console.log(identical);
+  if (identical) {
+    return identicalCount;
+  }
+  return count;
+};
+console.log(numIdenticalPairs([1, 2, 3, 1, 1, 3]));
