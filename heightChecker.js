@@ -29,29 +29,45 @@ Output: 0
   */
 
 var heightChecker = function (heights) {
-  if (heights.length === 0) {
-    return 0;
-  }
-  var currentArray = heights;
-
-  var changes = 0;
-  for (var i = 0; i < currentArray.length; i++) {
-    for (var k = i + 1; k < currentArray.length; k++) {
-      if (currentArray[i] === currentArray[k]) {
-        continue;
-      }
-      if (currentArray[i] > currentArray[k]) {
-        var currentElementAtI = currentArray[i]; //2
-        var currentElementAtK = currentArray[k]; //3
-        currentArray[i] = currentElementAtK;
-        currentArray[k] = currentElementAtI;
-        changes = changes + 1;
-        console.log(currentArray);
+  // if (heights.length === 0) {
+  //   return 0;
+  // }
+  // var currentArray = heights;
+  // var changes = 0;
+  // for (var i = 0; i < currentArray.length; i++) {
+  //   for (var k = i + 1; k < currentArray.length; k++) {
+  //     if (currentArray[i] === currentArray[k]) {
+  //       continue;
+  //     }
+  //     if (currentArray[i] > currentArray[k]) {
+  //       var currentElementAtI = currentArray[i]; //2
+  //       var currentElementAtK = currentArray[k]; //3
+  //       currentArray[i] = currentElementAtK;
+  //       currentArray[k] = currentElementAtI;
+  //       changes = changes + 1;
+  //       console.log(currentArray);
+  //     }
+  //   }
+  // }
+  // console.log(changes);
+  // return changes;
+  if (heights.length !== 0) {
+    var sortedArray = [...heights];
+    heights.sort((a, b) => {
+      return a - b;
+    });
+    console.log(sortedArray);
+    var changes = 0;
+    for (var index = 0; index < sortedArray.length; index++) {
+      if (sortedArray[index] !== heights[index]) {
+        changes++;
       }
     }
+    return changes;
+  } else {
+    return "no array has been entered";
   }
-  console.log(changes);
-  return changes;
 };
 console.log(heightChecker([1, 1, 4, 2, 1, 3]));
 console.log(heightChecker([1, 2, 3, 4, 5]));
+console.log(heightChecker([]));
