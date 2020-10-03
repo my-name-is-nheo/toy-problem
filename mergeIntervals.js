@@ -27,27 +27,34 @@ var merge = function (intervals) {
   if (intervals.length < 2) {
     return intervals;
   }
+  // var finalArray = [],
+  //   thisArray,
+  //   otherArray;
+  // for (var index = 0; index < intervals.length; index = index + 2) {
+  //   thisArray = intervals[index];
+  //   otherArray = intervals[index + 1];
+  //   if (thisArray[1] === otherArray[1]) {
+  //     if (thisArray[0] > otherArray[0]) {
+  //       finalArray.push(otherArray);
+  //     } else {
+  //       finalArray.push(thisArray);
+  //     }
+  //   } else {
+  //     if (thisArray[1] === otherArray[0] || thisArray[1] > otherArray[0]) {
+  //       finalArray.push([thisArray[0], otherArray[1]]);
+  //     } else {
+  //       finalArray.push(thisArray, otherArray);
+  //     }
+  //   }
+  // }
+  // return finalArray;
+
   var finalArray = [],
     thisArray,
-    otherArray;
-  for (var index = 0; index < intervals.length; index = index + 2) {
-    thisArray = intervals[index];
-    otherArray = intervals[index + 1];
-    if (thisArray[1] === otherArray[1]) {
-      if (thisArray[0] > otherArray[0]) {
-        finalArray.push(otherArray);
-      } else {
-        finalArray.push(thisArray);
-      }
-    } else {
-      if (thisArray[1] === otherArray[0] || thisArray[1] > otherArray[0]) {
-        finalArray.push([thisArray[0], otherArray[1]]);
-      } else {
-        finalArray.push(thisArray, otherArray);
-      }
-    }
-  }
-  return finalArray;
+    otherArray,
+    min,
+    max;
+  for (var index = 0; index < intervals.length; index = index + 2) {}
 };
 console.log(
   merge([
