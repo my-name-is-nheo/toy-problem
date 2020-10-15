@@ -13,23 +13,24 @@ The given array will, therefore, never be empty.
 */
 
 function leastLarger(a, i) {
-  if (a.length === 0) {
-    return -1;
-  }
-  var min = a[i];
-  var greaterArray = [];
+  // input arrray, index
+  //output index of the least larger than the element at the given index
+  // constraints : give index will be inside the array
+  //: given array with never be empty
+
+  var min = a[i]; //4
+  var greaterThanMinArray = [];
   for (var index = 0; index < a.length; index++) {
     var currentElement = a[index];
     if (currentElement > min) {
-      greaterArray.push(index);
+      greaterThanMinArray.push(currentElement);
     }
   }
 
-  if (greaterArray.length !== 0) {
-    console.log("this is math.min ", Math.min(...greaterArray));
-    return Math.min(...greaterArray);
+  if (greaterThanMinArray.length) {
+    return a.indexOf(Math.min(...greaterThanMinArray));
   }
-  console.log(" greaterArray is empty");
+
   return -1;
 }
 
