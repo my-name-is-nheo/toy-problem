@@ -19,4 +19,39 @@ titleCase('THE WIND IN THE WILLOWS', 'The In') // should return: 'The Wind in th
 titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 
 */
-function titleCase(title, minorWords) {}
+function titleCase(title, minorWords) {
+  var splittedTitle = title.split(" ").map((minor) => {
+    return minor.toLowerCase();
+  });
+  //first word will always be capitalized no matter what.
+  var finalArray = [
+    splittedTitle[0].charAt(0).toUpperCase() +
+      splittedTitle[0].slice(1).toLowerCase(),
+  ];
+  if (minorWords) {
+    var splittedMinor = minorWords.split(" ").map((minor) => {
+      return minor.toLowerCase();
+    });
+    for (var index = 1; index < splittedTitle.length; index++) {
+      var currentWord = splittedTitle[index];
+      if (splittedMinor.indexOf(currentWord) > -1) {
+        finalArray.push(currentWord);
+      } else {
+        finalArray.push(
+          currentWord.charAt(0).toUpperCase() + currentWord.slice(1)
+        );
+      }
+    }
+    return finalArray.join(" ");
+  } else {
+    return splittedTitle
+      .map((word) => {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
+  }
+}
+
+console.log(titleCase("a clash of KINGS", "a an the of"));
+console.log(titleCase("THE WIND IN THE WILLOWS", "The In"));
+console.log(titleCase("the quick brown fox"));
