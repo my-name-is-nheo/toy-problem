@@ -24,6 +24,7 @@ var odd_or_even = (arr) => {
   }
   return "odd";
 };
+// clever solution return arr.reduce((a,b)=>a+b,0) % 2 ? 'odd' : 'even';
 console.log(odd_or_even([0]));
 console.log(odd_or_even([0, 1, 4]));
 console.log(odd_or_even([0, -1, -5]));
