@@ -25,4 +25,19 @@ digPow(46288, 3) should return 51 since 4³ + 6⁴+ 2⁵ + 8⁶ + 8⁷ = 2360688
 
 */
 
-var digPow = (n, p) => {};
+var digPow = (n, p) => {
+  var splittedNumberArray = n.toString().split("");
+  var tempSolution = 0;
+  var exponent = p;
+  for (var index = 0; index < splittedNumberArray.length; index++) {
+    var currentNumber = splittedNumberArray[index];
+    tempSolution += Math.pow(parseInt(currentNumber), exponent);
+    exponent++;
+  }
+
+  return Number.isInteger(tempSolution / n) ? tempSolution / n : -1;
+};
+console.log(digPow(89, 1));
+console.log(digPow(92, 1));
+console.log(digPow(695, 2));
+console.log(digPow(46288, 3));
