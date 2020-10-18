@@ -8,20 +8,22 @@ It’s guaranteed that array contains at least 3 numbers.
 The tests contain some very huge arrays, so think about performance.
 */
 var findUniq = (arr) => {
-  var objContainer = {};
-  for (var index = 0; index < arr.length; index++) {
-    var currentNumber = arr[index];
-    if (objContainer[currentNumber] === undefined) {
-      objContainer[currentNumber] = 1;
-    } else {
-      objContainer[currentNumber]++;
-    }
-  }
-  for (var key in objContainer) {
-    if (objContainer[key] === 1) {
-      return parseInt(key);
-    }
-  }
+  // var objContainer = {};
+  // for (var index = 0; index < arr.length; index++) {
+  //   var currentNumber = arr[index];
+  //   if (objContainer[currentNumber] === undefined) {
+  //     objContainer[currentNumber] = 1;
+  //   } else {
+  //     objContainer[currentNumber]++;
+  //   }
+  // }
+  // for (var key in objContainer) {
+  //   if (objContainer[key] === 1) {
+  //     return parseInt(key);
+  //   }
+  // }
+  arr.sort((a, b) => a - b);
+  return arr[0] == arr[1] ? arr.pop() : arr[0];
 };
 console.log(findUniq([1, 1, 1, 2, 1, 1]));
 console.log(findUniq([0, 0, 0.55, 0, 0]));
