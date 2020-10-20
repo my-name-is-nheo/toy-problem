@@ -39,7 +39,12 @@ a = ["az", "toto", "picaro", "zone", "kiwi"] -->
 function partlist(arr) {
   // your code
   var finalArray = [];
-  for (var index = 1; index < arr.length; index++) {}
+  for (var index = 1; index < arr.length; index++) {
+    var arrayToPush = [];
+    arrayToPush.push(arr.slice(0, index));
+    arrayToPush.push(arr.slice(index));
+    finalArray.push(arrayToPush);
+  }
   return finalArray;
 }
 console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]));
