@@ -38,11 +38,12 @@ a = ["az", "toto", "picaro", "zone", "kiwi"] -->
 */
 function partlist(arr) {
   // your code
+  var arrayToPush;
   var finalArray = [];
   for (var index = 1; index < arr.length; index++) {
-    var arrayToPush = [];
-    arrayToPush.push(arr.slice(0, index));
-    arrayToPush.push(arr.slice(index));
+    arrayToPush = [];
+    arrayToPush.push(arr.slice(0, index).join(" "));
+    arrayToPush.push(arr.slice(index).join(" "));
     finalArray.push(arrayToPush);
   }
   return finalArray;
