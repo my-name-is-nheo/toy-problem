@@ -10,4 +10,26 @@ Example
 "aA11" -> 2 # 'a' and '1'
 "ABBA" -> 2 # 'A' and 'B' each occur twice
 */
-var duplicateCount = (string) => {};
+var duplicateCount = (string) => {
+  var stringToLowerCase = string.toLowerCase();
+  var container = {};
+  var total = 0;
+  for (var char in stringToLowerCase) {
+    if (!container[stringToLowerCase[char]]) {
+      container[stringToLowerCase[char]] = 1;
+    } else {
+      container[stringToLowerCase[char]]++;
+    }
+  }
+  for (var key in container) {
+    if (container[key] > 1) {
+      total++;
+    }
+  }
+  return total;
+};
+console.log(duplicateCount("abcde"));
+console.log(duplicateCount("aabbcde"));
+console.log(duplicateCount("aabBcde"));
+console.log(duplicateCount("indivisibility"));
+console.log(duplicateCount("Indivisibilities"));
