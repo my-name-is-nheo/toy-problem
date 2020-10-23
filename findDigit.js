@@ -9,16 +9,20 @@ Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0
 */
 
 var findDigit = (num, nth) => {
-  var numReversed = parseInt(
-    num.toString().split("").reverse().join("")
-  ).toString();
-  if (nth <= 0) {
-    return -1;
-  }
-  if (nth > numReversed.length) {
-    return 0;
-  }
-  return parseInt(numReversed[nth - 1]);
+  // var numReversed = parseInt(
+  //   num.toString().split("").reverse().join("")
+  // ).toString();
+  // if (nth <= 0) {
+  //   return -1;
+  // }
+  // if (nth > numReversed.length) {
+  //   return 0;
+  // }
+  // return parseInt(numReversed[nth - 1]);
+  if (nth <= 0) return -1;
+  if (nth > arr.length) return 0;
+  let arr = Math.abs(num).toString().split("");
+  return Number(arr[arr.length - nth]);
 };
 console.log(findDigit(5673, 4));
 console.log(findDigit(129, 2));
