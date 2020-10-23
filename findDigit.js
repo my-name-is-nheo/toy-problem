@@ -8,4 +8,22 @@ Keep in mind that 42 = 00042. This means that findDigit(42, 5) would return 0
 
 */
 
-var findDigit = (num) => {};
+var findDigit = (num, nth) => {
+  var numReversed = parseInt(
+    num.toString().split("").reverse().join("")
+  ).toString();
+  if (nth <= 0) {
+    return -1;
+  }
+  if (nth > numReversed.length) {
+    return 0;
+  }
+  return parseInt(numReversed[nth - 1]);
+};
+console.log(findDigit(5673, 4));
+console.log(findDigit(129, 2));
+console.log(findDigit(-2825, 3));
+console.log(findDigit(-456, 4));
+console.log(findDigit(0, 20));
+console.log(findDigit(65, 0));
+console.log(findDigit(24, -8));
