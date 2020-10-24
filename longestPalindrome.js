@@ -14,5 +14,29 @@ Example:
 "" -> 0
 */
 var longestPalindrome = (s) => {
-  //your code here]
+  //your code here
+  if (s.length === 0) {
+    return 0;
+  }
+  if (s.length === 1) {
+    return 1;
+  }
+  var total = 0;
+  var splittedString = s.toLowerCase().split(" ").join(""); // will account for sentences
+  var checkString = "";
+  for (var index = 0; index < splittedString.length; index++) {
+    checkString += splittedString[index];
+    if (checkString.length > 1) {
+      if (checkString === checkString.split("").reverse().join()) {
+        total += checkString.length;
+        checkString = "";
+      }
+    }
+  }
+  console.log(total);
 };
+console.log(longestPalindrome("a"));
+console.log(longestPalindrome("aab"));
+console.log(longestPalindrome("abcde"));
+console.log(longestPalindrome("zzbaabcd"));
+console.log(longestPalindrome(""));
