@@ -14,26 +14,34 @@ Example:
 "" -> 0
 */
 var longestPalindrome = (s) => {
-  //your code here
-  if (s.length === 0) {
-    return 0;
-  }
-  if (s.length === 1) {
-    return 1;
-  }
-  var total = 0;
-  var splittedString = s.toLowerCase().split(" ").join(""); // will account for sentences
-  var checkString = "";
-  for (var index = 0; index < splittedString.length; index++) {
-    checkString += splittedString[index];
-    if (checkString.length > 1) {
-      if (checkString === checkString.split("").reverse().join()) {
-        total += checkString.length;
-        checkString = "";
+  // //your code here
+  // if (s.length === 0) {
+  //   return 0;
+  // }
+  // if (s.length === 1) {
+  //   return 1;
+  // }
+  // var total = 0;
+  // var splittedString = s.toLowerCase().split(" ").join(""); // will account for sentences
+  // var checkString = "";
+  // for (var index = 0; index < splittedString.length; index++) {
+  //   checkString += splittedString[index];
+  //   if (checkString.length > 1) {
+  //     if (checkString === checkString.split("").reverse().join()) {
+  //       total += checkString.length;
+  //       checkString = "";
+  //     }
+  //   }
+  // }
+  let isPalindrome = (str) => str.split("").reverse().join("") === str;
+
+  for (let i = s.length; i >= 0; i--) {
+    for (let j = s.length - i; j >= 0; j--) {
+      if (isPalindrome(s.substr(j, i))) {
+        return i;
       }
     }
   }
-  console.log(total);
 };
 console.log(longestPalindrome("a"));
 console.log(longestPalindrome("aab"));
