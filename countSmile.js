@@ -18,4 +18,35 @@ countSmileys([';]', ':[', ';*', ':$', ';-D']); // should return 1;
 Note
 In case of an empty array return 0. You will not be tested with invalid input (input will always be an array). Order of the face (eyes, nose, mouth) elements will always be the same.
 */
-var countSmileys = (array) => {};
+var countSmileys = (array) => {
+  if (array.length === 0) {
+    return 0;
+  }
+  var smileys = [
+    ":)",
+    ";)",
+    ":-)",
+    ";-)",
+    ";~)",
+    ":~)",
+    ":D",
+    ";D",
+    ":-D",
+    ":~D",
+    ";-D",
+    ";~D",
+  ];
+  var smiles = 0;
+  for (var index = 0; index < array.length; index++) {
+    var currentSmile = array[index];
+    for (var j = 0; j < smileys.length; j++) {
+      if (currentSmile === smileys[j]) {
+        smiles++;
+      }
+    }
+  }
+  return smiles;
+};
+console.log(countSmileys([":)", ";(", ";}", ":-D"]));
+console.log(countSmileys([";D", ":-(", ":-)", ";~)"]));
+console.log(countSmileys([";]", ":[", ";*", ":$", ";-D"]));
