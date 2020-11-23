@@ -10,25 +10,29 @@ returns false / False for every other input.
 */
 
 var isIntArray = (arr) => {
-  if (Array.isArray(arr)) {
-    if (arr.length === 0) {
-      return true;
-    } else {
-      var result;
-      for (var index = 0; index < arr.length; index++) {
-        var currentElement = arr[index];
-        if (currentElement === null) {
-          return false;
-        }
-
-        if (Number.isInteger(currentElement) || currentElement % 1 === 0) {
-          result = true;
-        } else {
-          return false;
-        }
-      }
-      return result;
-    }
+  // if (Array.isArray(arr)) {
+  //   if (arr.length === 0) {
+  //     return true;
+  //   } else {
+  //     var result;
+  //     for (var index = 0; index < arr.length; index++) {
+  //       var currentElement = arr[index];
+  //       if (currentElement === null) {
+  //         return false;
+  //       }
+  //       if (Number.isInteger(currentElement) || currentElement % 1 === 0) {
+  //         result = true;
+  //       } else {
+  //         return false;
+  //       }
+  //     }
+  //     return result;
+  //   }
+  // }
+  // return false;
+  if (!Array.isArray(arr)) return false;
+  for (i = 0; i < arr.length; i++) {
+    if (!Number.isInteger(arr[i])) return false;
   }
-  return false;
+  return true;
 };
