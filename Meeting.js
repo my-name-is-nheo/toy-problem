@@ -14,15 +14,18 @@ So the result of function meeting(s) will be:
 It can happen that in two distinct families with the same family name two people have the same first name too.
 */
 var meeting = (s) => {
-  var finalString = "";
-  var inputToArray = s.split(";").map((element) => {
-    return element.replace(":", ",");
-  });
-  for (var index = 0; index < inputToArray.length; index++) {
-    var currentElement = inputToArray[index];
-  }
-  console.log(inputToArray);
-  return finalString;
+  var inputToArrayToString = s
+    .split(";")
+    .map((element) => {
+      return element.replace(":", ",");
+    })
+    .map((element) => {
+      return element.toUpperCase().split(",").reverse().join(", ");
+    })
+    .sort()
+    .join(")(");
+  console.log("(" + inputToArrayToString + ")");
+  return "(" + inputToArrayToString + ")";
 };
 meeting(
   "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill"
